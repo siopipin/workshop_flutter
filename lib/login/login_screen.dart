@@ -39,8 +39,20 @@ class _nameState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Title'),
-                      CustomText(text: "Date"),
-                      CustomText(text: "Deskripsi"),
+                      CustomText(
+                        text: "Date",
+                        style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      CustomText(
+                        text: "Deskripsi",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ]),
               )
             ],
