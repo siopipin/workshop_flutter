@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/login/providers/news_provider.dart';
 import 'package:flutter_workshop/login/widgets/custom_text.dart';
+
+import 'package:provider/provider.dart';
 
 //https://pastebin.com/RRGpbn44
 
@@ -69,7 +72,7 @@ class _nameState extends State<Login> {
                     children: [
                       Text('Title'),
                       CustomText(
-                        text: "Date",
+                        text: context.read<NewsProvider>().nama,
                         style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 2,
