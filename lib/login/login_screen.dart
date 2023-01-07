@@ -9,16 +9,43 @@ class Login extends StatefulWidget {
 }
 
 class _nameState extends State<Login> {
+  String? title;
+
+  String? nama;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    title = "News";
+    ecek();
+    super.initState();
+  }
+
+  ecek() {
+    Future.delayed(Duration(seconds: 5), () {
+      print('Hallo');
+      setState(() {
+        nama = "Hallo2";
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Login',
+          title!,
         ),
         centerTitle: true,
       ),
-      body: Container(
+      body: kartu(),
+    );
+  }
+
+  kartu() {
+    if (nama != null) {
+      return Container(
           margin: EdgeInsets.all(20),
           height: 120,
           color: Colors.blue,
@@ -47,7 +74,7 @@ class _nameState extends State<Login> {
                         ),
                       ),
                       CustomText(
-                        text: "Deskripsi",
+                        text: nama == null ? "Ecek" : nama!,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -56,7 +83,9 @@ class _nameState extends State<Login> {
                     ]),
               )
             ],
-          )),
-    );
+          ));
+    } else {
+      return CircularProgressIndicator();
+    }
   }
 }
