@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/login/widgets/custom_text.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -38,8 +39,8 @@ class _nameState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Title'),
-                      Text('date'),
-                      Text('deskripsi'),
+                      CustomText(text: "Date"),
+                      CustomText(text: "Deskripsi"),
                     ]),
               )
             ],
