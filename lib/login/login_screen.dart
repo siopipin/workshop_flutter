@@ -20,7 +20,7 @@ class _nameState extends State<Login> {
       body: Column(
         children: [
           Text(
-            'data',
+            'data2',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
