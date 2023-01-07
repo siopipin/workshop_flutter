@@ -23,6 +23,11 @@ class _nameState extends State<Login> {
     // TODO: implement initState
     title = "News";
     ecek();
+
+    Future.microtask(() {
+      context.read<NewsProvider>().getNews();
+    });
+
     super.initState();
   }
 
@@ -70,9 +75,17 @@ class _nameState extends State<Login> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Title'),
+                      Text(context
+                          .watch<NewsProvider>()
+                          .datamodel
+                          .data![0]
+                          .title!),
                       CustomText(
-                        text: context.read<NewsProvider>().nama,
+                        text: context
+                            .watch<NewsProvider>()
+                            .datamodel
+                            .data![0]
+                            .dateCreated!,
                         style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 2,
